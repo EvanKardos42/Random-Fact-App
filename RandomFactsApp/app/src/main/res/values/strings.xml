@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Random Facts App</string>
-    <string name="default_title">Random Facet#1</string>
+    <string name="title_string">Random Facet %1$s</string>
     <string name="default_fact">Dinosaurs can poop</string>
 </resources>
