@@ -1,6 +1,7 @@
 package com.example.rakutenassigment.network
 
 import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RandomFactFetcher {
         // unsecure website. can cause security problems
@@ -9,6 +10,7 @@ object RandomFactFetcher {
         private fun getRetrofit(): Retrofit {
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
+                .addConverterFactory(MoshiConverterFactory.create())
                 .build()
         }
 

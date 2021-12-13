@@ -1,4 +1,4 @@
-package com.example.randomfactsapp.model
+package com.example.randomfactsapp.data.model
 
 
 import com.squareup.moshi.Json
