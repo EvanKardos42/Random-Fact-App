@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 
-interface RandomFactService {
+interface NumberFactService {
     @GET("/1..50")
     suspend fun get50Facts():String
 

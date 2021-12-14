@@ -1,4 +1,4 @@
-package com.example.randomfactsapp.YearRandomFactFragment
+package com.example.randomfactsapp.ui.YearFactFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
