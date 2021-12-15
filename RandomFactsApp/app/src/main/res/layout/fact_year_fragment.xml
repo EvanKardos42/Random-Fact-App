@@ -7,21 +7,22 @@
 
 
     <TextView
-        android:id="@+id/Date_year_textView"
+        android:id="@+id/date_year_textView"
         android:layout_width="213dp"
         android:layout_height="50dp"
-        android:text="Feburary 14th,1901"
+        android:text="@string/default_date"
         android:textAlignment="viewStart"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/fact_textView"
-        app:layout_constraintStart_toStartOf="@+id/fact_textView"
+        app:layout_constraintBottom_toTopOf="@+id/year_fact_textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07999998"
         app:layout_constraintVertical_chainStyle="packed" />
-
     <TextView
-        android:id="@+id/fact_textView"
+        android:id="@+id/year_fact_textView"
         android:layout_width="256dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -32,8 +33,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Date_year_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/date_year_textView"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

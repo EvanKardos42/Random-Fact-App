@@ -16,5 +16,5 @@ object NumberFactFetcher {
                 .build()
         }
 
-        val apiService  = getRetrofit().create(NumberFactService::class.java)
+        val apiService: NumberFactService = getRetrofit().create(NumberFactService::class.java)
     }
