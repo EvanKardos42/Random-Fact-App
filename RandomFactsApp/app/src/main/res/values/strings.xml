@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Random Facts App</string>
-    <string name="title_string">Random Facet# %1$s</string>
+    <string name="title_string">Random Fact# %1$s</string>
     <string name="default_fact">Dinosaurs can poop</string>
     <string name="default_date">Feburary 14th,1901</string>
 </resources>
