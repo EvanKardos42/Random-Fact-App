@@ -7,9 +7,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.randomfactsapp.R
+import com.example.randomfactsapp.ui.util.Callback
 
-class FactsRecycleAdapter(facts:List<String>) : RecyclerView.Adapter<FactsRecycleAdapter.FactViewHolder>() {
-    private var data:List<String> = facts
+class FactsRecycleAdapter(private var factNumbers:List<String>, private var callback: Callback?) : RecyclerView.Adapter<FactsRecycleAdapter.FactViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FactViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -18,27 +18,26 @@ class FactsRecycleAdapter(facts:List<String>) : RecyclerView.Adapter<FactsRecycl
     }
 
     override fun onBindViewHolder(holder: FactViewHolder, position: Int) {
-        val fact = data[position]
-        holder.setData(position.toString(),fact)
+        val fact = factNumbers[position]
+        val number = position+1
+        holder.setData(number.toString(),fact)
+        holder.itemView.setOnClickListener {
+            callback!!.callFragment(number)
+        }
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return factNumbers.size
     }
 
-    inner class FactViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
+    inner class FactViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         private val titleTextView: TextView = itemView.findViewById(R.id.number_title_textView)
-        private val factTextView:TextView = itemView.findViewById(R.id.number_fact_textView)
+        private val factTextView: TextView = itemView.findViewById(R.id.number_fact_textView)
 
-        init {
-            val thing = itemView.context as AppCompatActivity
 
-        }
-
-        fun setData(factNumber:String,randomFact:String){
-            titleTextView.text = itemView.context.getString(R.string.title_string,factNumber)
+        fun setData(factNumber: String, randomFact: String) {
+            titleTextView.text = itemView.context.getString(R.string.title_string, factNumber)
             factTextView.text = randomFact
         }
-
     }
 }
